@@ -13,6 +13,9 @@ torch.set_num_threads(1)
 
 API_KEY = os.getenv("API_KEY")
 
+if API_KEY is None:
+    raise ValueError("API_KEY environment variable not set")
+
 app = FastAPI(title="AI Voice Detection API")
 
 # Load model ONCE

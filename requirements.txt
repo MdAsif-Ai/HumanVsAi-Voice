@@ -1,9 +1,13 @@
 fastapi
-uvicorn
+uvicorn[standard]
 requests
+pydantic
 numpy
 scipy
-scikit-learn
+torch==2.1.2+cpu
 transformers
 huggingface-hub
-pydantic
+pydub
+librosa
+soundfile
+ffmpeg-python
