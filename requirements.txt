@@ -1,8 +1,9 @@
 fastapi
 uvicorn
-torch
+requests
+numpy
+scipy
+scikit-learn
 transformers
-pydub
-librosa
-soundfile
-ffmpeg-python
+huggingface-hub
+pydantic
