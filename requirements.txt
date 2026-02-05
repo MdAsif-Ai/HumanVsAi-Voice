@@ -1,13 +1,8 @@
 fastapi
-uvicorn[standard]
-requests
-pydantic
-numpy
-scipy
-torch==2.1.2+cpu
+uvicorn
+torch==2.1.0
 transformers
-huggingface-hub
-pydub
 librosa
+pydub
 soundfile
 ffmpeg-python

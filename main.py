@@ -11,10 +11,7 @@ import librosa
 # FORCE CPU
 torch.set_num_threads(1)
 
-API_KEY = os.getenv("API_KEY")
-
-if API_KEY is None:
-    raise ValueError("API_KEY environment variable not set")
+API_KEY = os.getenv("API_KEY", "local_test_key")
 
 app = FastAPI(title="AI Voice Detection API")
 
@@ -87,3 +84,8 @@ def detect_voice(request: VoiceRequest, auth: bool = Depends(verify_api_key)):
         "confidenceScore": round(ai_score, 2),
         "explanation": explanation
     }
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
